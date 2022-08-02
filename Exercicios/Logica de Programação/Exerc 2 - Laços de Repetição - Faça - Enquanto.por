@@ -1,9 +1,22 @@
 programa
 {
+
+	/* Faça um programa que pegue um número do teclado e calcule a soma de todos os números  de 1 até ele. Ex.: o usuário entra 7, o programa vai mostrar 28, pois  1+2+3+4+5+6+7=28.*/
 	
 	funcao inicio()
 	{
-		escreva("Olá Mundo")
+		inteiro x, soma=0, num=1
+
+		escreva("Entre com um valor: ")
+		leia(x)
+		
+		faca 
+		{
+		escreva (num)
+		soma=soma+num
+		num++
+		}enquanto (num<=x)
+		escreva("\nA soma é = ",soma)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -11,7 +24,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 12; 
+ * @POSICAO-CURSOR = 322; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
