@@ -12,7 +12,11 @@ Java SE 17.0.4
 ✒️Autores:
 
 Amanda Giacometti – www.github.com/ManGiaco
+
 Gustavo Macedo - www.github.com/GustavoMLima9393
+
 Sandy Martins - www.github.com/sandymartins
+
 Thais Melim - www.github.com/thaismelim
+
 Thais Oliveira - www.github.com/Tha-Oliveira
