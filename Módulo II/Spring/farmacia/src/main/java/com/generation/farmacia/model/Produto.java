@@ -1,34 +1,46 @@
 package com.generation.farmacia.model;
 
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_produto")
+@Table(name = "tb_produtos1")
 
 public class Produto {
-
-		
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-
-	@NotBlank(message = "Campo obrigatório.")
+	private Long id;
+	
+	@NotNull
 	private String nome;
+	
+	@NotNull
+	private double valor;
+	
+	@UpdateTimestamp
+	private LocalDateTime data;
+	
+	@ManyToOne // tipo de relação que esta classe vai ter com a outra classe
+	@JsonIgnoreProperties("produtos1") // evitar lopp infinito
+	private Categoria categoria;
 
-	@NotBlank(message = "Campo obrigatório")
-	private String descricao;
-
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -40,13 +52,30 @@ public class Produto {
 		this.nome = nome;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public double getValor() {
+		return valor;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+
+	public LocalDateTime getData() {
+		return data;
+	}
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 	
 	
+
 }
