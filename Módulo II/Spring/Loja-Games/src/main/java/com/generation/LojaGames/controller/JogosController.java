@@ -66,7 +66,8 @@ public class JogosController {
 	public ResponseEntity<Jogos> post(@Valid @RequestBody Jogos jogos)
 	{
 		if(categoriaRepository.existsById(jogos.getCategoria().getId()))
-			return ResponseEntity.status(HttpStatus.CREATED).body(jogosRepository.save(jogos));
+			return ResponseEntity.status(HttpStatus.CREATED)
+					.body(jogosRepository.save(jogos));
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 	}
 		
@@ -77,7 +78,8 @@ public class JogosController {
 		if(jogosRepository.existsById(jogos.getId()))
 		{
 			if(categoriaRepository.existsById(jogos.getCategoria().getId()))
-				return ResponseEntity.status(HttpStatus.OK).body(jogosRepository.save(jogos));
+				return ResponseEntity.status(HttpStatus.OK)
+						.body(jogosRepository.save(jogos));
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
